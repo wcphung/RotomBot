@@ -1,10 +1,10 @@
 import discord
 import datetime
 import asyncio
-import os3
+import os
 
-TOKEN = os.environ.get("TOKEN")
-SERVER_ID = os.environ.get("SERVER_ID")
+TOKEN = os.environ('TOKEN')
+SERVER_ID = os.environ('SERVER_ID')
 
 client = discord.Client()
 
