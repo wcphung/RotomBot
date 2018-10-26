@@ -2,9 +2,13 @@ import discord
 import datetime
 import asyncio
 import os
+from boto.s3.connection import S3Connection
 
-TOKEN = os.environ("TOKEN")
-SERVER_ID = os.environ("SERVER_ID")
+TOKEN = S3Connection(os.environ['TOKEN'])
+SERVER_ID = S3Connection(os.environ['SERVER_ID'])
+
+#TOKEN = os.environ.get("TOKEN")
+#SERVER_ID = os.environ.get("SERVER_ID")
 
 client = discord.Client()
 
