@@ -1,5 +1,4 @@
 discord.py==0.14.3
 datetime
 asyncio
-os
-boto.s3.connection
+os3
