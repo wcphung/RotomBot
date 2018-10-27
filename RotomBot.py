@@ -27,7 +27,8 @@ async def set_mentionable():
     #loop to check the time and turn @Mentions on/off
     while not client.is_closed:
         current_hour = datetime.datetime.now(tz).hour
-        print('This current datetime is ' + str(datetime.datetime.today()))
+        print('The current hour is ' + str(current_hour))
+        print('This current datetime is ' + str(datetime.datetime.today(tz)))
         if current_hour >= 23 or current_hour <= 7:
                 if admin_role.mentionable:
                     await client.edit_role(server, admin_role, mentionable=False)
