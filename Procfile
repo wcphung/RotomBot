@@ -1,2 +1,1 @@
-web: python RotomBot.py
-worker: RotomBot.py
+worker: python RotomBot.py
