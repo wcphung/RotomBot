@@ -2,9 +2,11 @@ import discord
 import datetime
 import asyncio
 import os
+import pytz
 
 TOKEN = os.environ.get('TOKEN')
 SERVER_ID = os.environ.get('SERVER_ID')
+tz = pytz.timezone('America/Los_Angeles')
 
 client = discord.Client()
 
@@ -24,7 +26,7 @@ async def set_mentionable():
     anymvraid_role = discord.utils.get(server.roles, name='AnyMVRaid')
     #loop to check the time and turn @Mentions on/off
     while not client.is_closed:
-        current_hour = datetime.datetime.now().hour
+        current_hour = datetime.datetime.now(tz).hour
         print('This current datetime is ' + str(datetime.datetime.today()))
         if current_hour >= 23 or current_hour <= 7:
                 if admin_role.mentionable:
