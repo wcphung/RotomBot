@@ -20,7 +20,7 @@ async def set_mentionable():
     await client.wait_until_ready()
     # set each role
     server = client.get_server(SERVER_ID)
-    admin_role = discord.utils.get(server.roles, name='Moderator')
+    admin_role = discord.utils.get(server.roles, name='Moderators')
     fenton_role = discord.utils.get(server.roles, name='Fenton')
     civita_role = discord.utils.get(server.roles, name='Civita')
     anymvraid_role = discord.utils.get(server.roles, name='AnyMVRaid')
