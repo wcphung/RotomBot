@@ -20,7 +20,7 @@ async def set_mentionable():
     await client.wait_until_ready()
     # set each role
     server = client.get_server(SERVER_ID)
-    admin_role = discord.utils.get(server.roles, name='Mafia')
+    admin_role = discord.utils.get(server.roles, name='Moderator')
     fenton_role = discord.utils.get(server.roles, name='Fenton')
     civita_role = discord.utils.get(server.roles, name='Civita')
     anymvraid_role = discord.utils.get(server.roles, name='AnyMVRaid')
@@ -32,9 +32,9 @@ async def set_mentionable():
         if current_hour >= 23 or current_hour <= 7:
                 if admin_role.mentionable:
                     await client.edit_role(server, admin_role, mentionable=False)
-                    print('Mafia mentions off')
+                    print('Moderator mentions off')
                 else:
-                    print('No Mafia changes needed for 11pm-8am')
+                    print('No Moderator changes needed for 11pm-8am')
                 if fenton_role.mentionable:
                     await client.edit_role(server, fenton_role, mentionable=False)
                     print('Fenton mentions off')
@@ -53,9 +53,9 @@ async def set_mentionable():
         else:
             if not admin_role.mentionable:
                 await client.edit_role(server, admin_role, mentionable=True)
-                print('Mafia mentions on')
+                print('Moderator mentions on')
             else:
-                print('No Mafia changes needed for 8am-11pm')
+                print('No Moderator changes needed for 8am-11pm')
             if not fenton_role.mentionable:
                 await client.edit_role(server, fenton_role, mentionable=True)
                 print('Fenton mentions on')
