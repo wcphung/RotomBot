@@ -17,7 +17,7 @@ async def on_message(msg):
     author = message.author
     if author == client.user:
         return
-    elif '!add Fenton' in message.content:
+    elif '!add fenton' in message.content:
         role = discord.utils.get(server.roles, name='Fenton')
         if role in author.roles:
             response = '{0.author.mention} you are already notified of Fenton raids. No changes have been made'.format(message)
@@ -26,7 +26,7 @@ async def on_message(msg):
             response = '{0.author.mention} you have been ADDED to Fenton raid notifications'.format(message)
             await client.add_roles(author, role)
             await client.send_message(message.channel, response)
-    elif "!remove Fenton" in message.content:
+    elif "!remove fenton" in message.content:
         role = discord.utils.get(server.roles, name='Fenton')
         if role in author.roles:
             response = '{0.author.mention} you have been REMOVED from Fenton raid notifications'.format(message)
@@ -35,7 +35,7 @@ async def on_message(msg):
         elif role not in author.roles:
             response = '{0.author.mention} you already do NOT get Fenton raid notifications. No changes have been made'.format(message)
             await client.send_message(message.channel, response)
-    elif '!add Civita' in message.content:
+    elif '!add civita' in message.content:
         role = discord.utils.get(server.roles, name='Civita')
         if role in author.roles:
             response = '{0.author.mention} you are already notified of Civita raids. No changes have been made'.format(message)
@@ -44,7 +44,7 @@ async def on_message(msg):
             response = '{0.author.mention} you have been ADDED to Civita raid notifications'.format(message)
             await client.add_roles(author, role)
             await client.send_message(message.channel, response)
-    elif "!remove Civita" in message.content:
+    elif "!remove civita" in message.content:
         role = discord.utils.get(server.roles, name='Civita')
         if role in author.roles:
             response = '{0.author.mention} you have been REMOVED from Civita raid notifications'.format(message)
@@ -53,7 +53,7 @@ async def on_message(msg):
         elif role not in author.roles:
             response = '{0.author.mention} you already do NOT get Civita raid notifications. No changes have been made'.format(message)
             await client.send_message(message.channel, response)
-    elif '!add AnyMVRaid' in message.content:
+    elif '!add anymvraid' in message.content:
         role = discord.utils.get(server.roles, name='AnyMVRaid')
         if role in author.roles:
             response = '{0.author.mention} you are already notified of AnyMVRaid raids. No changes have been made'.format(message)
@@ -62,7 +62,7 @@ async def on_message(msg):
             response = '{0.author.mention} you have been ADDED to AnyMVRaid raid notifications'.format(message)
             await client.add_roles(author, role)
             await client.send_message(message.channel, response)
-    elif "!remove AnyMVRaid" in message.content:
+    elif "!remove anymvraid" in message.content:
         role = discord.utils.get(server.roles, name='AnyMVRaid')
         if role in author.roles:
             response = '{0.author.mention} you have been REMOVED from AnyMVRaid raid notifications'.format(message)
