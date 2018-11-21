@@ -11,7 +11,8 @@ tz = pytz.timezone('America/Los_Angeles')
 client = discord.Client()
 
 @client.event
-async def on_message(message):
+async def on_message(msg):
+    message = msg.lower()
     server = client.get_server(SERVER_ID)
     author = message.author
     if author == client.user:
