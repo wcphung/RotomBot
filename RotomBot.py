@@ -84,48 +84,48 @@ async def set_mentionable():
         current_hour = datetime.datetime.now(tz).hour
         print('The current hour is ' + str(current_hour))
         print('This current datetime is ' + str(datetime.datetime.now(tz)))
-        if current_hour >= 23 or current_hour <= 7:
+        if current_hour >= 23 or current_hour <= 6:
                 if admin_role.mentionable:
                     await client.edit_role(server, admin_role, mentionable=False)
                     print('Moderator mentions off')
                 else:
-                    print('No Moderator changes needed for 11pm-8am')
+                    print('No Moderator changes needed for 11pm-6am')
                 if fenton_role.mentionable:
                     await client.edit_role(server, fenton_role, mentionable=False)
                     print('Fenton mentions off')
                 else:
-                    print('No Fenton changes needed for 11pm-8am')
+                    print('No Fenton changes needed for 11pm-6am')
                 if civita_role.mentionable:
                     await client.edit_role(server, civita_role, mentionable=False)
                     print('Civita Mentions off')
                 else:
-                    print('No Civita changes needed for 11pm-8am')
+                    print('No Civita changes needed for 11pm-6am')
                 if anymvraid_role.mentionable:
                     await client.edit_role(server, anymvraid_role, mentionable=False)
                     print('AnyMVRaid mentions off')
                 else:
-                    print('No AnyMVRaid changes needed for 11pm-8am')
+                    print('No AnyMVRaid changes needed for 11pm-6am')
         else:
             if not admin_role.mentionable:
                 await client.edit_role(server, admin_role, mentionable=True)
                 print('Moderator mentions on')
             else:
-                print('No Moderator changes needed for 8am-11pm')
+                print('No Moderator changes needed for 6am-11pm')
             if not fenton_role.mentionable:
                 await client.edit_role(server, fenton_role, mentionable=True)
                 print('Fenton mentions on')
             else:
-                print('No Fenton changes needed for 8am-11pm')
+                print('No Fenton changes needed for 6am-11pm')
             if not civita_role.mentionable:
                 await client.edit_role(server, civita_role, mentionable=True)
                 print('Civita mentions on')
             else:
-                print('No Civita changes needed for 8am-11pm')
+                print('No Civita changes needed for 6am-11pm')
             if not anymvraid_role.mentionable:
                 await client.edit_role(server, anymvraid_role, mentionable=True)
                 print('AnyMVRaid mentions on')
             else:
-                print('No AnyMVRaid changes needed for 8am-11pm')
+                print('No AnyMVRaid changes needed for 6am-11pm')
         print('------')
         #perform every hour = 3600 seconds
         await asyncio.sleep(3600)
